@@ -1,8 +1,7 @@
 import express from "express";
+import { getProperties } from "../controllers/properties.js";
 
 const router = express.Router();
-router.get("/", (req, res) => {
-  res.send("this is the property managment route");
-});
+router.get("/", getProperties);
 
 export default router;
