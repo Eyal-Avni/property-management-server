@@ -1,24 +1,13 @@
 import mongoose from "mongoose";
 
-const AddressSchema = mongoose.Schema({
+const propertySchema = mongoose.Schema({
   city: String,
   street: String,
-  houseNumber: String,
-});
-
-const apartmentSchema = mongoose.Schema({
+  number: Number,
   floor: Number,
-  apartmentNumber: Number,
-});
-
-const propertySchema = mongoose.Schema({
-  address: {
-    type: AddressSchema,
-    required: true,
-  },
-  apartmentDetails: apartmentSchema,
-  size: { type: Number, required: true },
-  numberOfRooms: { type: Number, required: true },
+  apt: Number,
+  size: Number,
+  rooms: Number,
 });
 
 const Property = mongoose.model("Property", propertySchema);
