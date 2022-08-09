@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const propertySchema = mongoose.Schema({
-  city: String,
-  street: String,
-  number: Number,
+  city: { type: String, required: true },
+  street: { type: String, required: true },
+  number: { type: Number, required: true },
   floor: Number,
   apt: Number,
-  size: Number,
-  rooms: Number,
+  size: { type: Number, required: true },
+  rooms: { type: Number, required: true },
 });
 
 const Property = mongoose.model("Property", propertySchema);
